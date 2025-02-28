@@ -19,4 +19,4 @@ python src/model_train.py
 python src/predict.py
 python src/trading_strategy.py
 python src/visualize.py
-streamlit run webapp/app.py
+streamlit run main.py
