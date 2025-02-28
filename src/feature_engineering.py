@@ -8,7 +8,7 @@ def compute_rsi(data, window=14):
     return 100 - (100 / (1 + rs))
 
 def check_csv():
-    df = pd.read_csv("../data/AAPL.csv")
+    df = pd.read_csv("C:/Users/Arshita Satpute/Documents/2021-2025/Data Analytics/StockPrediction/data/AAPL.csv")
     print("Columns in CSV:", df.columns)
     
 def add_technical_indicators(df):
@@ -19,8 +19,7 @@ def add_technical_indicators(df):
 
 if __name__ == "__main__":
     check_csv()
-    df = pd.read_csv("../data/AAPL.csv", skiprows=2, parse_dates=["Date"], index_col="Date")
-    df.rename(columns={"Price": "Date"}, inplace=True)
+    df = pd.read_csv("C:/Users/Arshita Satpute/Documents/2021-2025/Data Analytics/StockPrediction/data/AAPL.csv", parse_dates=["Date"], index_col="Date")
     print(df.head())
     df = add_technical_indicators(df)
-    df.to_csv("../data/AAPL_processed.csv")
+    df.to_csv("C:/Users/Arshita Satpute/Documents/2021-2025/Data Analytics/StockPrediction/data/AAPL_processed.csv")

@@ -1,8 +1,7 @@
 import pandas as pd
-import numpy as np
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestRegressor
 import joblib
 
 def train_model(symbol):
@@ -22,7 +21,6 @@ def train_model(symbol):
     model.fit(X_train, y_train)
 
     joblib.dump(model, f"../models/{symbol}_model.pkl")
-    print(f"Model trained and saved for {symbol}")
 
 if __name__ == "__main__":
     train_model("AAPL")
